@@ -1,13 +1,14 @@
 import hljs from 'highlight.js';
-// @ts-ignore
-import { definer } from 'highlightjs-solidity';
+// @ts-expect-error: no types 🤷‍♂️
+import { definer } from 'highlightjs-graphql';
 import { Application } from 'typedoc';
 import { Converter } from 'typedoc/dist/lib/converter';
 
-export class SolidityPlugin {
-  initialize(app: Application) {
-    app.converter.on(Converter.EVENT_BEGIN, () => {
-      hljs.registerLanguage('solidity', definer);
+export class GraphQLPlugin {
+  initialize(app: Application): void {
+    hljs.registerLanguage('graphql', definer);
+    app.on(Converter.EVENT_BEGIN, () => {
+      hljs.registerLanguage('graphql', definer);
     });
   }
 }

@@ -1,26 +1,29 @@
 {
-  "name": "typedoc-plugin-solidity",
+  "name": "typedoc-plugin-graphql",
   "version": "1.0.0",
-  "description": "A typedoc plugin for adding highlighting for solidity code.",
-  "main": "index.js",
+  "description": "A typedoc plugin for adding highlighting for graphql code.",
+  "main": "dist/index.js",
   "keywords": [
     "typedocplugin",
     "typedoc",
-    "solidity",
+    "graphql",
     "highlight.js"
   ],
   "license": "MIT",
-  "author": "Sebastian Siemssen <fubhy@fubhy.com>",
-  "homepage": "https://github.com/fubhy/typedoc-plugin-solidity",
+  "contributors": [
+    "Benny Powers <web@bennypowers.com>",
+    "Sebastian Siemssen <fubhy@fubhy.com>"
+  ],
+  "homepage": "https://github.com/bennypowers/typedoc-plugin-graphql",
   "publishConfig": {
     "access": "public"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fubhy/typedoc-plugin-solidity.git"
+    "url": "git+https://github.com/fubhy/typedoc-plugin-graphql.git"
   },
   "bugs": {
-    "url": "https://github.com/fubhy/typedoc-plugin-solidity/issues"
+    "url": "https://github.com/fubhy/typedoc-plugin-graphql/issues"
   },
   "scripts": {
     "clean": "rimraf dist",
@@ -29,27 +32,22 @@
     "postbuild": "cp package.json LICENSE README.md dist",
     "prewatch": "cp package.json dist",
     "watch": "tsc --watch",
-    "format": "prettier --write src/{*,**/*}.ts",
-    "lint": "yarn prettier --list-different src/{*,**/*}.ts",
-    "typecheck": "tsc --noEmit",
-    "preversion": "yarn typecheck && yarn lint && yarn build",
-    "postversion": "cp package.json dist",
-    "prerelease": "yarn version",
-    "release": "git push --tags && yarn publish dist --new-version $npm_package_version",
-    "postrelease": "git push"
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "highlightjs-solidity": "^1.0.12"
+    "highlightjs-graphql": "^1.0"
   },
   "devDependencies": {
+    "@pwrs/eslint-config": "0.0.10",
     "@types/highlight.js": "^9.12.3",
-    "highlight.js": "^9.18.1",
+    "eslint": "^7.8.1",
+    "highlight.js": "^10.1.2",
     "husky": "^4.2.3",
     "lint-staged": "^10.1.2",
-    "prettier": "^2.0.4",
     "rimraf": "^3.0.2",
-    "typedoc": "^0.17.4",
-    "typescript": "^3.8.3"
+    "typedoc": "^0.19.1",
+    "typescript": "^4.0.2"
   },
   "peerDependencies": {
     "typedoc": "^0.17.4"
@@ -61,7 +59,7 @@
   },
   "lint-staged": {
     "*.ts": [
-      "yarn format"
+      "npm run lint -- --fix"
     ]
   }
 }

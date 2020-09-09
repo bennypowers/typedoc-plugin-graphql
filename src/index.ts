@@ -1,7 +1,7 @@
 import { Application } from 'typedoc';
-import { SolidityPlugin } from './plugin';
+import { GraphQLPlugin } from './plugin';
 
-export = (host: Application) => {
-  const plugin = new SolidityPlugin();
+export = (host: Application): void => {
+  const plugin = new GraphQLPlugin();
   plugin.initialize(host.application);
 };
