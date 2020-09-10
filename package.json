@@ -1,6 +1,6 @@
 {
   "name": "typedoc-plugin-graphql",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A typedoc plugin for adding highlighting for graphql code.",
   "main": "dist/index.js",
   "keywords": [
