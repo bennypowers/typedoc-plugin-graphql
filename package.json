@@ -20,10 +20,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fubhy/typedoc-plugin-graphql.git"
+    "url": "git+https://github.com/bennypowers/typedoc-plugin-graphql.git"
   },
   "bugs": {
-    "url": "https://github.com/fubhy/typedoc-plugin-graphql/issues"
+    "url": "https://github.com/bennypowers/typedoc-plugin-graphql/issues"
   },
   "scripts": {
     "clean": "rimraf dist",
