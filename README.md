@@ -21,7 +21,7 @@ Once installed, typedoc will automatically detect and use it.
 
 ## Example
 
-This below example will now properly render and highlight the solidity code in the comment.
+This below example will now properly render and highlight the GraphQL in the comment.
 
 ````typescript
 /**
